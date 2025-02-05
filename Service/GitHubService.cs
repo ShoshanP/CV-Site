@@ -56,9 +56,8 @@ namespace Service
                 repoName = null;
             }
 
-            var request = new SearchRepositoriesRequest()
+            var request = new SearchRepositoriesRequest(repoName)
             {
-                // אם language לא null, ממירים אותו לסוג Language
                 Language = language != null ? (Language)Enum.Parse(typeof(Language), language, true) : null,
                 User = username
             };
